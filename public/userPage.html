@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta charset='UTF-8'>
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+#guid{
+  background:#006699;
+ }
+#downbut{
+  margin:10px 5px 5px;
+}
+body{
+background-color:#99CCCC
+}
+#operate{
+ margin-top:10%;
+ margin-left:15%;
+}
+</style>
+<body class="container">
+<div id='guid'><!--title-->
+<div class="dropdown"align="right">
+   <button type="button" class="btn btn-primary dropdown-toggle" id="downbut" 
+      data-toggle="dropdown">
+      
+   </button>
+   <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+      <li >
+         <a  tabindex="-1" href="#">Account</a>
+      </li>
+
+	  <li class="divider"></li>
+      <li >
+         <a role="menuitem" tabindex="-1" href="/logout">logout</a>
+      </li>
+   </ul>
+</div>
+</div>
+<div><!--welcome sentence-->
+<h3 style="text-align:center"><span id="userName"></span>&nbsp&nbsp, Welcome to VotingPage</h3>
+</div>
+<div  id='operate'>
+<h4>
+which do you want:
+</h4>
+<div class="row" align="center">
+<div class="col-xs-4">
+<p ><span><a href="/addvot/:id"><i class="fa fa-plus fa-2x"></i></span>&nbsp&nbspplus a new voting</p></a>
+</div>
+<div class="col-xs-4">
+<p ><span><a href="/openVots"><i class="fa fa-folder-open fa-2x"></i></span>&nbsp&nbsp open my voting</p></a>
+</div>
+</div>
+
+</div>
+<script type='text/javascript'src='/common/ajaxFunction.js'></script>
+<script type='text/javascript' src='/controllers/userpage_controller_client.js'></script>
+</body>
+</html>
+

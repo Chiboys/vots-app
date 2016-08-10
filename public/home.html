@@ -1,0 +1,128 @@
+<html>
+<head>
+  <script type='text/javascript'src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+<meta charset="UTF-8">
+ <title>voting poll</title>
+</head>
+<style type="text/css">
+.row{
+   background:gray;
+}
+#login{
+margin-left:60%;
+margin-top:10px;
+margin-bottom:5px;
+margin-right:5px;
+padding-left:10%
+}
+#signup{
+margin-top:10px;
+margin-bottom:5px;
+margin-right:5px;
+padding-right:5% ;
+}
+#content_title{
+text-align:center;
+}
+ul,li{
+	list-style-type:none;
+	text-align:left;
+	margin-left:15%;
+}
+#voting{
+	margin : 80px auto ;
+	width: 50%
+}
+#voting li{
+	margin-bottom : 10px;
+}
+#content{
+	float:left;
+	width:30%;
+	
+}
+#pie{
+float:right;
+}
+#title{
+background-color:transparent;  
+border-top:0px;
+border-left:0px;
+border-right:0px;
+border-bottom:1px solid black;
+text-align:center;
+margin-bottom:10px;
+margin-top:100px;
+
+}
+#options,#options > option {
+	width:90%;
+	height:	30px;
+
+}
+
+.tooltip{
+	position:absolut;
+	background-color:white;
+  width:100px;
+  height:100px;
+  text-align:center;
+  font-size:15px;
+  font:italic arial,sans-serif;
+}
+#choose,#delete{
+	margin-top:100px;
+	float:left;
+}
+</style>
+<body class="container" >
+<div class="row"><!--标题栏-->
+
+<div id="login" class="col-xs-2"><a href="/login">
+<p>Login&nbsp&nbsp&nbsp
+</p></a>
+</div>
+<div id="signup"class="col-xs-2">
+<a href="/signup">
+<p>Sign Up&nbsp&nbsp&nbsp
+</p></a>
+</div>
+</div >
+<div id ="content_title"><!--网站介绍-->
+  <p>我们网站很牛哦！！</p>
+  <div id='vots'></div>
+</div>
+<div id='votInf' hidden='hidden'>
+<div align='right'id='back'>
+<button type='button' ><a href='#'><i class="fa fa-arrow-left fa-2x"></i></a></button>
+</div>
+<div id='content' class='col'><!--content about special voting-->
+	<div ><!--title-->
+		<input readonly='readonly'type='text'id='title'value='title'></input>
+	</div>
+	<div><!--options-->
+		<form method='post'>
+			<select id='options'>
+			</select>
+		</form>
+	</div>
+	
+<div >
+	<button type='button'id='choose'>choose</button>
+	</div>
+</div>
+<div id='pie'><!--the pie-->
+
+
+</div>
+</div>
+
+
+
+</body>
+ <script type='text/javascript' src='/common/ajaxFunction.js'></script>
+<script type='text/javascript' src ='/controllers/home_client.js'></script>
+<script type='text/javascript' src='/controllers/userpage_vots_controller_client.js'></script>
+</html>

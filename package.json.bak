@@ -1,0 +1,30 @@
+{
+  "name": "votingapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WangLiuLiuWang/votingapp.git"
+  },
+  "keywords": [
+    "123010"
+  ],
+  "author": "chiboy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WangLiuLiuWang/votingapp/issues"
+  },
+  "homepage": "https://github.com/WangLiuLiuWang/votingapp#readme",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "mongoose": "^4.5.8",
+    "passport": "^0.3.2",
+    "passport-github": "^1.1.0"
+  }
+}

@@ -1,0 +1,63 @@
+<html>
+      <head>
+              <meta charset="UTF-8">
+              <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+              <title>log in</title>
+
+      <head>
+<style type="text/css">
+.form-group{
+  width:300px;
+  height:50px;
+}
+form{
+ margin: 60px auto 20px ;
+ width: 30%
+}
+#guid{
+   background:gray;
+}
+#home{
+margin-left:85%;
+margin-top:0px;
+margin-bottom:10px;
+margin-right:5px;
+padding-bottom:10px;
+padding-top:10px;
+font-size:20px;
+}
+</style>
+      <body>
+	  <div id="guid"><!--±êÌâÀ¸-->
+
+	<div id="home">
+		
+			<p><a href="/">home&nbsp&nbsp&nbsp
+				<span>
+					<i class="fa fa-home">
+					</i>
+				</span>
+				</a>
+			</p>
+		
+	</div>
+	</div>
+            <form action="/login" method="post" id="loginform" role="form">
+                      <div class="form-group">
+                            <label for="name">name:</label>
+                            <input  name="name" type="text" id="name" class="form-control" required></input>
+                      </div>
+                      <div class="form-group">
+                            <label for="password">password:</label>
+                            <input name="password" type="password"id="password"class="form-control"required>
+                            </input>
+                      </div>
+                      <div class="form-group">
+                      <input name="button" type="submit" value="log in" class="btn btn-danger"></input>  
+                      </div>
+            </form>
+
+      </body>
+
+
+</html>

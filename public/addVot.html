@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+  <title>add voting</title>
+ </head>
+ <body class='container'>
+<style type='text/css'>
+body{
+	background-color:#99CC99;
+}
+  form{
+   margin: 60px auto 100px;
+   width:40%;
+  }
+form > div{
+	margin:5px;
+	width: 60%
+	height:30px;
+
+}
+form input[type=text]{
+    width:200px;
+	height:30px;
+}
+#guid{
+   background:#FFFFCC;
+   padding-top:3px;
+   padding-bottom:5px;
+}
+#downbut{
+	font-color:white;
+}
+#send{
+	background-color:gray;
+}
+</style>
+<div id='guid'><!--title-->
+<div class='dropdown' align='right'>
+	<button type='button' class='btn btn-primary dropdown-toggle' data-toggle='dropdown'id="downbut" >username
+	</button>
+	<ul class='dropdown-menu pull-right' aria-labelledby='dropdownMenl'>
+          <li>
+			<a tabindex='-1' href='#'>Account</a>
+		  </li>
+		  	  <li >
+         <a role="menuitem" tabindex="-1" href="/hostpage">home</a>
+      </li>
+		  <li class='divider'>
+		  </li>
+		  <li>
+			<a role='menuiten' tabindex='-1' href='/logout'>logout</a>
+		  </li>
+	</ul>
+</div>
+</div>
+
+<div><!--form-->
+
+ <form method='post' action='/addvot/:id'>
+  <div ><!--title-->
+		 <label for='title'>voting title:</label>
+      <input id='title' type='text' name='title' required></input>
+  </div>
+  <div id='option'><!--option-->	
+	  <div id='operate'>
+	  <label for='input'>add option:</label>
+      <input type='text'id='input'></input>
+	  <button type='button' id='add'>add</button>
+	  </div>
+  </div>
+  <div>
+	<input type='submit' name='button'id='send'disabled='disabled'></input>
+  </div>
+  </form>
+  </div>
+  <script type='text/javascript' src='/controllers/addvot_controller_client.js'></script>
+  <script type='text/javascript'src='/common/ajaxFunction.js'></script>
+ <script type='text/javascript' src='/controllers/userpage_controller_client.js'></script>
+ </body>
+</html>

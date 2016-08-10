@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script type='text/javascript'src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script type='text/javascript'src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   <script type='text/javascript'src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+   
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+  <title>Documents</title>
+ </head>
+ <style type="text/css">
+#guid{
+  background:#006699;
+ }
+#downbut{
+  margin:10px 5px 5px;
+}
+body{
+background-color:#99CCCC
+}
+#voting{
+	margin : 80px auto ;
+	width: 50%
+}
+#voting li{
+	margin-bottom : 10px;
+}
+#content{
+	float:left;
+	width:30%;
+	
+}
+#pie{
+float:right;
+}
+#title{
+background-color:transparent;  
+border-top:0px;
+border-left:0px;
+border-right:0px;
+border-bottom:1px solid black;
+text-align:center;
+margin-bottom:10px;
+
+}
+#options,#options > option {
+	width:90%;
+	height:	30px;
+
+}
+
+.tooltip{
+	position:absolut;
+	background-color:white;
+  width:100px;
+  height:100px;
+  text-align:center;
+  font-size:15px;
+  font:italic arial,sans-serif;
+}
+#choose,#delete{
+	margin-top:100px;
+	float:left;
+}
+</style>
+  <body class='container'>
+ <div id='guid'><!--title-->
+<div class="dropdown"align="right">
+   <button type="button" class="btn btn-primary dropdown-toggle" id="downbut" 
+      data-toggle="dropdown">
+      
+   </button>
+   <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+      <li >
+         <a  tabindex="-1" href="#">Account</a>
+      </li>
+	  <li >
+         <a role="menuitem" tabindex="-1" href="/hostpage">home</a>
+      </li>
+	  <li class="divider"></li>
+      <li >
+         <a role="menuitem" tabindex="-1" href="/logout">logout</a>
+      </li>
+   </ul>
+</div>
+
+</div>
+<div><!--welcome sentence-->
+<h3 style="text-align:center"><span id="userName"></span>&nbsp&nbsp, below are you votings.</h3>
+</div>
+<div id ='vot_option'>
+	<ul id='voting'>
+	
+	</ul>
+</div>
+<div id='votInf'hidden='hidden'>
+<div align='right'id='back'>
+<button type='button' ><a href='#'><i class="fa fa-arrow-left fa-2x"></i></a></button>
+</div>
+<div id='content' class='col'><!--content about special voting-->
+	<div ><!--title-->
+		<input readonly='readonly'type='text'id='title'value='title'></input>
+	</div>
+	<div><!--options-->
+		<form method='post'>
+			<select id='options'>
+			</select>
+		</form>
+	</div>
+	
+<div >
+	<button type='button'id='choose'>choose</button>
+	</div>
+	<div>
+	<button type='button'id='delete'><a href='#' id='deletMe'>delete</a></button>
+
+</div>
+</div>
+<div id='pie'><!--the pie-->
+
+
+</div>
+</div>
+ </body>
+	 <script type='text/javascript' src='/common/ajaxFunction.js'></script>
+	 <script type='text/javascript' src='/controllers/vots_controller_client.js'></script>
+ <script type='text/javascript'src='/common/ajaxFunction.js'></script>
+<script type='text/javascript' src='/controllers/userpage_controller_client.js'></script>
+</html>
