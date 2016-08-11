@@ -124,8 +124,8 @@ function svg(data,name){
 								'<span><p>option: '+name[i]+'</p></span><br/>'+
 								'<span><p>count: '+origin[i]+'</p></span>'
 							)
-							   .style("left",(d3.event.pageX + 20)+"px")
-					           .style("top",(d3.event.pageY+20)+"px");;
+							   .style("left",(d3.event.pageX + 40)+"px")
+					           .style("top",(d3.event.pageY+40)+"px");;
 						
 						})
 						.on('mouseout',function(d){

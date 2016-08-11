@@ -13,7 +13,12 @@ var ajax = function(page){
 				var li = document.createElement('li');
 				var a = document.createElement('a');
 				a.setAttribute('href','#');
-				li.innerHTML = ele.name;
+				if(ele.name.length > 10){
+					li.innerHTML = ele.name.slice(0,10)+"...";
+				}else{
+					li.innerHTML = ele.name;
+				}
+				
 				li.setAttribute('onclick','look("'+ele['_id']+'")');
 				a.appendChild(li);
 				ul.appendChild(a);
