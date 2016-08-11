@@ -19,7 +19,7 @@ app.use(session({
 	route(app,passport);
 	app.use('/controllers',express.static(process.cwd() +'/app/controllers/'));
 	app.use('/common',express.static(process.cwd() +'/app/common/'));
-	var port = process.PORT || 8080;
+	var port = process.env.PORT || 8080;
 	app.listen(port,function(){
 		console.log("Node.js listening on port"+port);
 	});
