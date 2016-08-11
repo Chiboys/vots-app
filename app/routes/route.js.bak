@@ -21,14 +21,14 @@ module.exports=function(app,passport){
 		var page = parseInt(req.params.page,10),skips=0,arr;
 		if(page !== 'NaN'){
 			skips = 10 * page;
-			arr = Vot.find({},{$limit:10,$skip:skips},function(err,arr){
+			arr = Vot.find({},function(err,arr){
 				if(err){throw err;}
 				if(arr.length !== 0){
 					res.send(arr);
 				}else{
 					res.end('');
 				}
-			});
+			}).limit(10).skip(skips);
 		}
 	});
 	app.route("/login")
@@ -177,6 +177,7 @@ app.post('/choose/:id/:index',function(req,res){
 	})
 		.post(function(req,res){
 	          var newUser = new User();
+			  return console.log(req.body);
 			  newUser.user.name = req.body.name.toString();
 			  newUser.user.email = req.body.email.toString();
 			  newUser.user.password = req.body.password.toString();
@@ -187,6 +188,26 @@ app.post('/choose/:id/:index',function(req,res){
 					  throw err;
 			  });
 			  res.redirect("/");
+	
+	});
+	app.get('/signup/:field/:data',function(req,res){
+		var isName = req.params.field;
+		function hasOne(err,data){
+			if(err){ throw err;}
+			if(data === null){
+				res.end('1');			
+			}else{
+				res.end('0');	
+			}
+		
+		}
+		if(isName === '0'){
+			User.findOne({'user.email':req.params.data},hasOne);
+		}else{
+			User.findOne({'user.name':req.params.data},hasOne);
+		}
+
+		
 	
 	});
 }

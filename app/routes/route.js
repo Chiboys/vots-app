@@ -189,4 +189,24 @@ app.post('/choose/:id/:index',function(req,res){
 			  res.redirect("/");
 	
 	});
+	app.get('/signup/:field/:data',function(req,res){
+		var isName = req.params.field;
+		function hasOne(err,data){
+			if(err){ throw err;}
+			if(data === null){
+				res.end('1');			
+			}else{
+				res.end('0');	
+			}
+		
+		}
+		if(isName === '0'){
+			User.findOne({'user.email':req.params.data},hasOne);
+		}else{
+			User.findOne({'user.name':req.params.data},hasOne);
+		}
+
+		
+	
+	});
 }

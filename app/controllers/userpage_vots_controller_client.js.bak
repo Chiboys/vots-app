@@ -5,7 +5,7 @@ var vot_option = document.getElementById('content_title');
 var choose = document.getElementById('choose');
 var but= document.getElementById('back');
 
-but.setAttribute('onclick',back);
+but.setAttribute('onclick','back()');
 
 
 function back(){

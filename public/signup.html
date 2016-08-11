@@ -2,6 +2,7 @@
       <head>
               <meta charset="UTF-8">
               <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+			  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
               <title>signing up</title>
 
       <head>
@@ -10,33 +11,71 @@
   width:300px;
   height:50px;
 }
+div{
+	margin-bottom:15px;
+}
 form{
  margin: 60px auto 20px ;
  width: 30%
 }
+#login {
+margin-left:60%;
+margin-top:10px;
+margin-bottom:5px;
+margin-right:5px;
+padding-left:10%
+}
+#signup {
+margin-top:10px;
+margin-bottom:5px;
+margin-right:5px;
+padding-right:5% ;
+
+}
+#signup p,#login p{
+color:white;
+}
+.row {
+	background-color:steelblue;
+}
 </style>
-      <body>
-            <form action="/signup" method="POST" id="signform" role="form">
+      <body class="container" >
+<div class="row"><!--±êÌâÀ¸-->
+
+<div id="login" class="col-xs-2"><a href="/login">
+<p>Login&nbsp&nbsp&nbsp
+</p></a>
+</div>
+<div id="signup"class="col-xs-2">
+<a href="/">
+<p>Home&nbsp&nbsp&nbsp
+</p></a>
+</div>
+</div >
+   <form action="/signup" method="POST" id="signform" role="form">
                       
-                      <div class="form-group">
-                            <label for="email">email:</label>
-                            <input name="email" id="email"type="email" placeholder="**@**.com" class="form-control "required></input>
-                      </div>
-                      <div class="form-group">
-                            <label for="name">name:</label>
-                            <input  name="name" type="text" id="name" class="form-control"required></input>
-                      </div>
-                      <div class="form-group">
-                            <label for="password">password:</label>
-                            <input name="password" type="password"id="password"class="form-control"required>
-                            </input>
-                      </div>
-                      <div class="form-group">
-                      <input name="button" type="submit" value="sign up" class="btn btn-danger"></input>  
-                      </div>
+                      <div class="input-group margin-bottom-sm">
+  <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+  <input class="form-control" type="email" placeholder="Email address"required='required'name='email'title='enter your email'></input>
+</div>
+
+  <div class="input-group margin-bottom-sm">
+  <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+  <input class="form-control" type="text" placeholder="user name"required='required'name='name'id='name'title='set your username'></input>
+</div>
+<div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+  <input class="form-control" type="password" placeholder="Password"required='required'name='password'maxlength='12'minlength='6'title='set your password'></input>	
+</div>
+
+ 
+            <div class="form-group">
+               <input name="button" type="submit" value="sign up" class="btn btn-danger"id='submit'title='sign up now'></input>  
+            </div>
             </form>
 
       </body>
-
+	  <script type='text/javascript'src='/common/ajaxFunction.js'></script>
+	<script type='text/javascript' src ='/controllers/signup_client.js'></script>
 
 </html>
