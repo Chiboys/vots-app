@@ -5,7 +5,7 @@
     function(){
 		var downbut = document.querySelector('#downbut');
 		var userName = document.querySelector('#userName');
-		var url = "/userPage/name/:id";
+		var url = "/userPage/name/5438";
 		function update(data){
 			var user = JSON.parse(data);
 			if(downbut){

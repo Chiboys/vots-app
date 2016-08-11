@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>account information</title>
+ </head>
+ <body>
+ <div id='usrInf'>
+	<h3><span id='username'></span>&nbsp&nbsp,below are you information:</h3>
+</div>
+ <div id='changeKey'>
+	<button type='button'>change key</button>
+ </div>
+
+ </body>
+ <script type='text/javascript' src='/controllers/account_client.js'>
+</html>

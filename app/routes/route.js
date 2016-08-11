@@ -41,6 +41,7 @@ module.exports=function(app,passport){
 			//failureFlash: true
 			
 		}));
+	
 	app.get("/logout",function(req,res){
 		req.logout();
 		res.sendFile(url+"/public/home.html");
@@ -88,6 +89,17 @@ module.exports=function(app,passport){
 				});
 			});
 		res.redirect('/');
+	});
+	app.route('/account')
+		.get(function(req,res){
+			res.sendFile(url+'/public/account.html');
+	
+		}).post(isLogIn,function(req,res){
+			User.findOne({'user.email':req.user},{'user.password':false},function(err,data){
+			if(err){ throw err;}
+					res.json(data);
+		});
+	
 	});
 	app.get('/openVots',isLogIn,function(req,res){
 		res.sendFile(url+"/public/votings.html");

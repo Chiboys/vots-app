@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<style type="text/css">
+#guid{
+  background:#006699;
+ }
+body{
+background-color:#99CCCC
+}
+#userName{
+	float:center;
+}
+#downbut{
+  margin:10px 5px 5px;
+}
+</style>
+ <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <title>account information</title>
+ </head>
+ <body class="container">
+<div id='guid'><!--title-->
+<div class="dropdown"align="right">
+   <button type="button" class="btn btn-primary dropdown-toggle" id="downbut" 
+      data-toggle="dropdown">
+      
+   </button>
+   <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+      <li >
+         <a  tabindex="-1" href="/account">Account</a>
+      </li>
+
+	  <li class="divider"></li>
+      <li >
+         <a role="menuitem" tabindex="-1" href="/logout">logout</a>
+      </li>
+   </ul>
+</div>
+</div>
+ <div id='userName'>
+	<h3><span id='username'></span>&nbsp&nbsp,below are you information:</h3>
+</div>
+ </body>
+ <script type='text/javascript' src='/common/ajaxFunction.js'></script>
+ <script type='text/javascript' src='/controllers/account_client.js'></script>
+
+</html>

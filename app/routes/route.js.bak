@@ -41,6 +41,7 @@ module.exports=function(app,passport){
 			//failureFlash: true
 			
 		}));
+	
 	app.get("/logout",function(req,res){
 		req.logout();
 		res.sendFile(url+"/public/home.html");
@@ -88,6 +89,18 @@ module.exports=function(app,passport){
 				});
 			});
 		res.redirect('/');
+	});
+	app.route('/account')
+		.get(function(req,res){
+			res.sendFile(url+'/public/account.html');
+	
+		}).post(isLogIn,function(req,res){
+			User.findOne({'user.email':req.user},{'user.password':false},function(err,data){
+			if(err){ throw err;}
+			console.log(data);
+					res.json(data);
+		});
+	
 	});
 	app.get('/openVots',isLogIn,function(req,res){
 		res.sendFile(url+"/public/votings.html");
@@ -177,7 +190,6 @@ app.post('/choose/:id/:index',function(req,res){
 	})
 		.post(function(req,res){
 	          var newUser = new User();
-			  return console.log(req.body);
 			  newUser.user.name = req.body.name.toString();
 			  newUser.user.email = req.body.email.toString();
 			  newUser.user.password = req.body.password.toString();
