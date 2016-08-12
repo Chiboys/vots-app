@@ -1,11 +1,13 @@
 var content = document.getElementById('content_title');
 var vots = document.getElementById('vots');
-var page = 0;var next = true;
+var page = 0;var next = true;var isFirst = true;
 var ajax = function(page){
-	vots.innerHTML = '';
+	
 	var url = '/visit/'+page;
 	function update(data){
 		if(data !== ''){
+			vots.innerHTML = '';
+			vots.innerHTML='';
 			data = data.slice(1,data.length-1).replace(/},{/g,'}||{').split('||');
 			var ul = document.createElement('ul');
 			data.forEach(function(ele){
@@ -24,20 +26,23 @@ var ajax = function(page){
 				ul.appendChild(a);
 			});
 			vots.appendChild(ul);
-			if(page === 0){
+			if(isFirst){
 				var div = document.createElement('div');
 				div.innerHTML = 'here are some votings.';
 				content.insertBefore(div,vots);
 				var button1 = document.createElement('button');
 				button1.setAttribute('id','down');
 				button1.setAttribute('type','button');
-				button1.innerHTML = 'pageDown';
+				button1.setAttribute('onclick','down()');
+				button1.innerHTML = 'page Down';
 				content.appendChild(button1);
 				var button2 = document.createElement('button');
 				button2.setAttribute('id','up');
 				button2.setAttribute('type','button');
-				button2.innerHTML = 'pageup';
+				button2.setAttribute('onclick','up()');
+				button2.innerHTML = 'page Up';
 				content.appendChild(button2);
+				isFirst = false;
 			}
 			
 		}else{
@@ -48,21 +53,16 @@ var ajax = function(page){
 	ajaxFunctions.ready(ajaxFunctions.ajaxRequest('get',url,update));
 }
 ajax(page);
-var up = document.getElementById('up');
-var down = document.getElementById('down');
-if(down !== null){
-	down.addEventListener('onclick',function(){
-		if(next){
+	function up(){
+		if(next === true){
 			page++;
 			ajax(page);
 		}
-		
-	});
-	up.addEventListener('onclick',function(){
+	}
+	function down(){
 		if(page > 0){
 			page--;
 			ajax(page);
+			next =true;
 		}
-	});
-
-}
+	}
