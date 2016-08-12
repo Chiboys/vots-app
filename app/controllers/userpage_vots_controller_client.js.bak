@@ -40,6 +40,7 @@ var look = function(id){
 //vot
 function svg(data,name){
 	//d3 pie
+	document.getElementById('pie').innerHTML='';
 	var val = data.reduce(function(pre,cur){
 				return pre+cur;
 			});
@@ -47,7 +48,7 @@ function svg(data,name){
 			var origin = data.slice(0,data.length);
 			var height = 400;
 				var width = 400;
-				document.getElementById('pie').innerHTML='';
+				
 				var svg = d3.select('#pie')
 				.append('svg')
 				.attr('height',height)

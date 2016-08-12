@@ -45,6 +45,7 @@ function svg(data,name){
 				return pre+cur;
 			});
 			if(val !== 0){
+				choose.setAttribute('hidden','hidden');
 			var origin = data.slice(0,data.length);
 			var height = 400;
 				var width = 400;
