@@ -45,7 +45,7 @@ function svg(data,name){
 				return pre+cur;
 			});
 			if(val !== 0){
-				choose.setAttribute('hidden','hidden');
+				
 			var origin = data.slice(0,data.length);
 			var height = 400;
 				var width = 400;
@@ -164,6 +164,7 @@ function svg(data,name){
 }
 
 function inc(id){
+	choose.setAttribute('hidden','hidden');
     var index = option.selectedIndex;
 	var url = '/choose/'+id+'/'+index;
 	function update(data){
