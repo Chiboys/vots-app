@@ -4,7 +4,7 @@ var votInf = document.getElementById('votInf');
 var vot_option = document.getElementById('content_title');
 var choose = document.getElementById('choose');
 var but= document.getElementById('back');
-
+var hasvot =false;
 but.setAttribute('onclick','back()');
 
 
@@ -17,6 +17,7 @@ var look = function(id){
 	function update(data){
 		if(data){
 			var data = JSON.parse(data);
+			hasvot = false;
 			votInf.removeAttribute('hidden');
 			vot_option.setAttribute('hidden','hidden');
 			title.setAttribute('value',data.name);
@@ -164,7 +165,11 @@ function svg(data,name){
 }
 
 function inc(id){
-	choose.setAttribute('hidden','hidden');
+	if(!hasvot){
+		choose.removeAttribute('hidden');
+	}else{
+				choose.setAttribute('hidden','hidden');
+	}
     var index = option.selectedIndex;
 	var url = '/choose/'+id+'/'+index;
 	function update(data){
