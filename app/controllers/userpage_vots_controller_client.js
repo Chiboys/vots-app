@@ -17,6 +17,9 @@ var look = function(id){
 	function update(data){
 		if(data){
 			var data = JSON.parse(data);
+			if(hasvot === true){
+				choose.removeAttribute('hidden');
+			}
 			hasvot = false;
 			votInf.removeAttribute('hidden');
 			vot_option.setAttribute('hidden','hidden');
@@ -165,11 +168,10 @@ function svg(data,name){
 }
 
 function inc(id){
-	if(!hasvot){
-		choose.removeAttribute('hidden');
-	}else{
+	if(hasvot===false){
 				choose.setAttribute('hidden','hidden');
 	}
+	hasvot = true;
     var index = option.selectedIndex;
 	var url = '/choose/'+id+'/'+index;
 	function update(data){
